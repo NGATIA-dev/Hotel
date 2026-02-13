@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Hotels | Luxury Spa Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f8f6;color:#2e3d35;}
+header{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');
+    background-size:cover;background-position:center;
+    height:90vh;color:white;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;
+}
+header h1{font-size:3.5rem;font-family:'Playfair Display',serif;}
+header p{margin-top:15px;font-size:1.2rem;}
+nav{
+    position:fixed;top:0;width:100%;
+    background:white;padding:15px 50px;
+    display:flex;justify-content:space-between;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:999;
+}
+nav a{text-decoration:none;color:#2e3d35;margin-left:25px;font-weight:500;}
+nav a:hover{color:#8bb8a8;}
+
+section{padding:80px 10%;}
+h2{font-family:'Playfair Display',serif;margin-bottom:40px;text-align:center;font-size:2.5rem;color:#3e5f55;}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+}
+.card img{width:100%;height:220px;object-fit:cover;}
+.card-content{padding:20px;}
+.card-content h3{margin-bottom:10px;color:#3e5f55;}
+.card-content p{font-size:0.9rem;color:#555;}
+
+button{
+    background:#8bb8a8;
+    color:white;border:none;
+    padding:10px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    margin-top:10px;
+}
+button:hover{background:#6fa392;}
+
+footer{
+    background:#2e3d35;
+    color:white;text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+.filter-buttons{
+    text-align:center;margin-bottom:30px;
+}
+.filter-buttons button{
+    margin:5px;
+}
+
+@media(max-width:768px){
+    header h1{font-size:2.2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>ABC Hotels</strong></div>
+<div>
+<a href="#hotels">Hotels</a>
+<a href="#rooms">Rooms</a>
+<a href="#packages">Packages</a>
+<a href="#products">Products</a>
+<a href="#services">Services</a>
+</div>
+</nav>
+
+<header>
+<h1>Welcome to ABC Hotels</h1>
+<p>Luxury. Wellness. Serenity.</p>
+</header>
+
+<section id="hotels">
+<h2>Our Hotels</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+<div class="card-content">
+<h3>ABC Serenity Resort</h3>
+<p>Mountain escape with luxury spa & wellness retreat.</p>
+<button>Explore</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<div class="card-content">
+<h3>ABC Royal Gardens</h3>
+<p>Elegant city hotel with rooftop spa and infinity pool.</p>
+<button>Explore</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501117716987-c8e6e1c7b6f0">
+<div class="card-content">
+<h3>ABC Ocean Bliss</h3>
+<p>Beachfront paradise with holistic spa therapies.</p>
+<button>Explore</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="rooms">
+<h2>Rooms & Suites</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39">
+<div class="card-content">
+<h3>Deluxe Room</h3>
+<p>King bed, spa bathroom, garden view.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<div class="card-content">
+<h3>Executive Suite</h3>
+<p>Private lounge, jacuzzi, luxury furnishings.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+<div class="card-content">
+<h3>Presidential Villa</h3>
+<p>Private pool, butler service, ultimate privacy.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="packages">
+<h2>Amenities Packages</h2>
+
+<div class="filter-buttons">
+<button onclick="filterPackages('all')">All</button>
+<button onclick="filterPackages('spa')">Spa</button>
+<button onclick="filterPackages('romance')">Romance</button>
+<button onclick="filterPackages('family')">Family</button>
+</div>
+
+<div class="grid" id="packageContainer">
+
+<div class="card package spa">
+<img src="https://images.unsplash.com/photo-1552693673-1bf958298935">
+<div class="card-content">
+<h3>Ultimate Spa Retreat</h3>
+<p>3-day detox, massage therapy & yoga sessions.</p>
+</div>
+</div>
+
+<div class="card package romance">
+<img src="https://images.unsplash.com/photo-1519821172141-b5d8d6c38b2e">
+<div class="card-content">
+<h3>Romantic Escape</h3>
+<p>Candlelight dinner, couples massage & suite upgrade.</p>
+</div>
+</div>
+
+<div class="card package family">
+<img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353">
+<div class="card-content">
+<h3>Family Fun Package</h3>
+<p>Kids activities, family suite & complimentary meals.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="products">
+<h2>Spa Products</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba8">
+<div class="card-content">
+<h3>Organic Essential Oils</h3>
+<p>Relaxation & therapeutic blends.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<div class="card-content">
+<h3>Luxury Skincare Kit</h3>
+<p>Hydrating and rejuvenating spa formulas.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd">
+<div class="card-content">
+<h3>Aromatherapy Candles</h3>
+<p>Calming scents for total wellness.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874">
+<div class="card-content">
+<h3>Full Body Massage</h3>
+<p>Deep tissue & relaxation therapies.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
+<div class="card-content">
+<h3>Yoga & Meditation</h3>
+<p>Daily wellness sessions by experts.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+<div class="card-content">
+<h3>Fine Dining</h3>
+<p>Organic gourmet cuisine & detox menus.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 ABC Hotels | Luxury Spa Experience</p>
+</footer>
+
+<script>
+function filterPackages(category){
+    let packages=document.querySelectorAll('.package');
+    packages.forEach(pkg=>{
+        if(category==="all"){
+            pkg.style.display="block";
+        }else{
+            if(pkg.classList.contains(category)){
+                pkg.style.display="block";
+            }else{
+                pkg.style.display="none";
+            }
+        }
+    });
+}
+</script>
+
+</body>
+</html>
